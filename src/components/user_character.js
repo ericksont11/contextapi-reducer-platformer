@@ -9,7 +9,7 @@ const UserCharacter = () => {
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       if (e.keyCode === 39 && parseInt(character.characterAttributes.left) < 94&&
-      (character.characterAttributes.level != 3 ||  parseInt(character.characterAttributes.left) + parseInt(character.characterAttributes.width) < 20)){
+      (character.characterAttributes.level !== 3 ||  parseInt(character.characterAttributes.left) + parseInt(character.characterAttributes.width) < 20)){
         character.dispatch({type:'MOVE_RIGHT'})
         if (character.characterAttributes.level === 4 &&  parseInt(character.characterAttributes.left) > 75){
           alert('YOU WIN')

@@ -1,5 +1,5 @@
 
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { EnemyContext } from '../contexts/enemy_context';
 import { CharacterContext} from '../contexts/character_context';
 let enemies, character = {}
@@ -29,7 +29,7 @@ const EnemyCharacters = () => {
                         enemies.dispatch('RESET')
                         character.dispatch({type:'RESET'})
                         window.location.reload();
-                    } else if(enemyPosition == 0){
+                    } else if(enemyPosition === 0){
                         movement[counter] = 'right'
                     } else {
                         enemies.dispatch('MOVE_LEFT_'+counter)

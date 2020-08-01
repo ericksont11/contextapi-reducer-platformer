@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect, useContext } from 'react';
+import React, { createContext, useReducer } from 'react';
 import { characterReducer } from '../reducers/character_reducer';
 
 export const CharacterContext = createContext();
