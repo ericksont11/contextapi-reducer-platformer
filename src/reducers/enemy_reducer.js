@@ -1,6 +1,13 @@
 export const enemyReducer = (state, action) => {
     switch (action) {
-        
+        case 'START':
+            return [
+                {
+                    ...state[0],
+                    movement: 'start',
+                },
+                ...state.slice(1)
+            ]
         case 'MOVE_LEFT_0':
             return [
                 {

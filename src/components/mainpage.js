@@ -4,11 +4,16 @@ import EnemyCharacters from './enemy_characters';
 import EnemyContextProvider from '../contexts/enemy_context';
 import Level from './level';
 import Flag from './flag';
+import StartModal from './start_modal';
 
 const MainPage = () => {
  
   return  (
     <div style={{width:'100vw', height:'100vh', background:'linear-gradient(to bottom, blue 0%, blue 90%, green 90%, green 100%)'}}>
+      <EnemyContextProvider>
+        <StartModal/>
+        <EnemyCharacters/>
+      </EnemyContextProvider>
       <Flag/>
       <Level
         top='79.875%'
@@ -31,9 +36,8 @@ const MainPage = () => {
         left='0%'
       />
       <UserCharacter/>
-      <EnemyContextProvider>
-        <EnemyCharacters/>
-      </EnemyContextProvider>
+   
+
     </div>
   ) 
 }

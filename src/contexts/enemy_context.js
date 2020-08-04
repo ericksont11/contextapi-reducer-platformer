@@ -10,7 +10,8 @@ const enemies = [
       name: '^ - ^',
       height: '5vh',
       width: '5vw',
-      level: 0
+      level: 0,
+      movement: 'paused'
   },
   {
       left: '70%',
