@@ -116,6 +116,7 @@ export const enemyReducer = (state, action) => {
             return  [
                 {
                     ...state[0],
+                    movement: 'paused',
                     left: '30%',
                 },
                 {
@@ -124,7 +125,7 @@ export const enemyReducer = (state, action) => {
                 },
                 {
                     ...state[2],
-                    left: '90%',
+                    left: '60%',
                 },
                 {
                     ...state[3],
@@ -132,6 +133,10 @@ export const enemyReducer = (state, action) => {
                 },
                 {
                     ...state[4],
+                    left: '60%',
+                },
+                {
+                    ...state[5],
                     left: '10%',
                 }
             ]

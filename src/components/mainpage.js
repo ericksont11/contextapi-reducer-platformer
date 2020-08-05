@@ -10,10 +10,8 @@ const MainPage = () => {
  
   return  (
     <div style={{width:'100vw', height:'100vh', background:'linear-gradient(to bottom, blue 0%, blue 90%, green 90%, green 100%)'}}>
-      <EnemyContextProvider>
-        <StartModal/>
-        <EnemyCharacters/>
-      </EnemyContextProvider>
+      <div id="overlay" style={{position: 'fixed', height:'100%', width:'100%', backgroundColor:'grey', opacity: '.75', zIndex:1}}></div>
+      <EnemyCharacters/>
       <Flag/>
       <Level
         top='79.875%'
@@ -36,8 +34,7 @@ const MainPage = () => {
         left='0%'
       />
       <UserCharacter/>
-   
-
+  
     </div>
   ) 
 }

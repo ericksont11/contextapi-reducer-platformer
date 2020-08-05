@@ -9,9 +9,18 @@ const StartModal = (props) => {
     character = useContext(CharacterContext);
     let movement = []
     let array = []
+
+    document.addEventListener('keydown', (e) => { 
+        if(e.keyCode === 13){
+            startEnemies()
+        }
+    })
+
     let startEnemies = () => {
-        if (enemies.enemyAttributes[0].movement = 'paused'){
+        if (enemies.enemyAttributes[0].movement === 'paused'){
             enemies.dispatch('START')
+            document.getElementById('start-modal').style.display = 'none'
+            document.getElementById('overlay').style.opacity = 0
             for(let i=0; i< enemies.enemyAttributes.length; i++){
                 let counter = i
                 movement[counter] = 'left'
@@ -34,6 +43,8 @@ const StartModal = (props) => {
                             for (let i=0; i<array.length; i++){
                                 clearInterval(array[i])
                             }
+                            document.getElementById('overlay').style.opacity = .75
+                            document.getElementById('start-modal').style.display = 'block'
                         } else if(enemyPosition === 0){
                             movement[counter] = 'right'
                         } else {
@@ -49,6 +60,8 @@ const StartModal = (props) => {
                             for (let i=0; i<array.length; i++){
                                 clearInterval(array[i])
                             }
+                            document.getElementById('overlay').style.opacity = .75
+                            document.getElementById('start-modal').style.display = 'block'
                         } else if(enemyPosition == 50){
                             movement[counter] = 'left'
                         } else {
@@ -63,8 +76,9 @@ const StartModal = (props) => {
         }
     }
   return  (
-    <div style={{position:'absolute', left: '25vw', top:'25vh', width:'50vw', height:'50vh', backgroundColor:'brown', zIndex:'2'}}>
-        <button onClick={()=>startEnemies()} style={{height:'20vhind', width:'20vw', marginLeft:'15vw', marginTop:'15vh'}}>Start Game</button>
+    <div id='start-modal' style={{position:'absolute', left: '25vw', top:'25vh', width:'50vw', height:'50vh', backgroundColor:'brown', zIndex:'2',  boxShadow:
+    '0 0 10px black', borderRadius:'4px'}}>
+        <button onClick={()=>startEnemies()} style={{height:'20vh', width:'20vw', marginLeft:'15vw', marginTop:'15vh'}}>Start Game</button>
     </div>
   ) 
 }
