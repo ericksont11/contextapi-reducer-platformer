@@ -47,7 +47,8 @@ export const characterReducer = (state, action) => {
             return {
                 ...state,
                 left: '1%',
-                top: '93%'
+                top: '93%',
+                level: 0
             }
         default:
             return state

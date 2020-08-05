@@ -65,8 +65,8 @@ const UserCharacter = () => {
             }
           }
         }
-        }
-      })
+      }
+    })
   }, [])
 
   const style = {

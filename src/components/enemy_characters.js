@@ -1,5 +1,5 @@
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { EnemyContext } from '../contexts/enemy_context';
 let enemies
 
